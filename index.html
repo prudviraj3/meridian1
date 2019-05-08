@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian Schools</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+ 
+    <style>
+        button:focus {
+            outline: 0;
+            outline: 0;
+        }
+
+        .text-yellow {
+            color: #ffc000;
+        }
+
+        .schoolmessage {
+            padding: 25px 50px;
+        }
+
+        .whymeridian {
+            background: red;
+            padding: 30px 20px;
+        }
+
+        .principal__info span {
+            display: block;
+            font-weight: 700;
+            padding: 10px;
+            color: darkorange;
+        }
+
+        .section__affiliationandfacilities {
+            background: orange;
+            padding: 25px 10px;
+            text-align: center;
+        }
+
+        .section__banner {
+            background-image: url(banner.jpg);
+            background-size: cover;
+            padding: 150px 100px;
+        }
+
+        .banner__content {}
+
+        .banner__form {}
+
+        .primary-heading {
+            font-size: 4em;
+            text-transform: uppercase;
+            color: #e74c3c;
+            padding: 20px 0;
+        }
+
+        .secondary-heading {
+            font-size: 2.6em;
+        }
+
+        .landing__videos-links {
+            text-align: center;
+        }
+
+        .landing__videos-links .btn-link {
+            cursor: pointer;
+            border: 0;
+            background-color: transparent;
+            text-decoration: none;
+            font-size: 1.6em;
+            color: #7f8c8d;
+            transition: color .2s;
+        }
+
+        .landing__videos-links .nav-link:active,
+        .landing__videos-links .nav-link:hover {
+            color: #95a5a6;
+        }
+
+        .banner__form .card {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            background-color: rgba(255, 234, 167, 0.5);
+        }
+
+        .banner__form .card .card-header {
+            background-color: darkorange;
+        }
+
+        .banner__form .card label {
+            font-weight: 700;
+        }
+
+        .redline::after {
+            margin: 0 auto;
+            display: block;
+            content: '';
+            margin-top: 10px;
+            width: 30px;
+            background: red;
+            height: 5px;
+        }
+
+        .section__mainmenu .navbar-nav {
+            align-items: center;
+            width: 60%;
+        }
+
+        .section__mainmenu .navbar-nav .nav-item {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .section__mainmenu .navbar-nav .nav-link {
+            color: #34495e;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .section__mainmenu .logo__box {
+            width: 30%;
+            text-align: center;
+        }
+
+        .section__mainmenu .logo__box img {
+            width: 80%;
+        }
+
+        .mobilelogo {
+            display: none;
+            width: 200px;
+        }
+
+        /*        // Extra large devices (large desktops, 1200px and up)*/
+        @media (max-width: 1199.98px) {
+
+
+
+            .banner__content {
+                text-align: center;
+            }
+
+            .landing__videos-links {
+                text-align: left;
+            }
+
+            .landing__videos-links .btn-link {
+                font-size: 1.2em;
+            }
+
+            .primary-heading {
+                font-size: 1.8em;
+            }
+
+            .secondary-heading {
+                font-size: 1.4em;
+            }
+
+            .section__banner {
+                padding: 50px 30px;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+
+            .h2,
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .section__mainmenu .logo__box {
+                display: none;
+            }
+
+            .mobilelogo {
+                display: unset;
+                width: 200px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Modal Teacher Testimonial-->
+    <div class="modal fade" id="teachertestimonial" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content p-3">
+                <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/IhVCz-R_ECQ?start=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    Models for the landing of videos-->
+    <!-- Modal Parent Testimonial-->
+    <div class="modal fade" id="parenttestimonial" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content p-3">
+                <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/DMRzIp5E_fQ?start=5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light section__mainmenu">
+        <a class="navbar-brand mobilelogo" href="#">
+            <img src="meridianmobile.png" alt="School Logo" class="w-100">
+        </a>
+
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav mr-auto ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About The School</a>
+                </li>
+                <li class="nav-item ml-auto mr-auto logo__box">
+                    <a class="navbar-brand" href="#">
+                        <img src="meridian.png" alt="School Logo">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Affiliations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Why Meridian ?</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section class="section__banner">
+        <div class="row justify-content-around align-items-center h-100">
+            <div class="col-sm-12 col-md-12 col-lg-5 banner__content">
+                <h1 class="secondary-heading">We are now</h1>
+                <h3 class="primary-heading">International Baccalaureate</h3>
+                <h2 class="secondary-heading">- IB Candidate for PYP</h2>
+
+                <div class="row landing__videos-links justify-content-around pt-3">
+                    <button type="button" class="btn-link" data-toggle="modal" data-target="#parenttestimonial">
+                        <i class="ion-android-arrow-dropright-circle"></i> Parent Testimonial
+                    </button>
+                    <button type="button" class="btn-link" data-toggle="modal" data-target="#teachertestimonial">
+                        <i class="ion-android-arrow-dropright-circle"></i> Teacher Testimonial
+                    </button>
+                    <!--
+                    <a href="#" class="btn" data-toggle="modal" data-target="#parenttestimonial"><i class="ion-android-arrow-dropright-circle"></i> Parent Testimonial</a>
+                    <a href="#" class="btn" data-toggle="modal" data-target="#teachertestimonial"><i class="ion-android-arrow-dropright-circle"></i> Teacher Testimonial</a>
+-->
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-5 banner__form">
+                <div class="card">
+                    <form action="">
+                        <div class="card-header">
+                            <h3 class="text-center font-weight-bold text-white">Enquiry Form</h3>
+                        </div>
+                        <div class="card-body pl-5 pr-5">
+                            <div class="form-group row">
+                                <label for="childname" class="col-sm-3 col-form-label">Child Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="childname" placeholder="Child's Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="age" class="col-sm-3 col-form-label">Age</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="age" placeholder="Child's Age">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="studentmail" class="col-sm-3 col-form-label">Email</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="studentmail" placeholder="name@domain.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="mobile" class="col-sm-3 col-form-label">Mobile</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="mobile" placeholder="9XXXX8XXXX">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="comment" class="col-sm-3 col-form-label">Mobile</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" id="comment" rows="5" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10 offset-sm-3">
+                                    <button type="submit" class="btn btn-danger">Enquire for Admission</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid section__affiliationandfacilities">
+        <div class="container">
+            <div class="affiliation">
+                <h2 class="pb-2 redline">Affiliation</h2>
+            </div>
+            <br>
+            <div class="facilities">
+                <h2 class="pb-2 redline">Facilities</h2>
+            </div>
+
+        </div>
+    </section>
+
+    <!--    About school and Message from principal-->
+    <section class="container-fluid schoolmessage text-center">
+        <div class="row justify-content-around">
+            <div class="col-sm-12 col-md-5">
+                <h2 class="pb-2 redline">About the School</h2>
+                <p>Meridian Madhapur campus first opened its door in 2006. Following the CBSE curriculum the school has grown leaps and bounds year to year. We now have strength of 1200+ children from grades Nursery to Class X. We have also been awarded reaccreditation from the British Council, and we are the British Council School ambassadors.</p>
+
+                <p>At Meridian we are committed to developing students with a well rounded personality who are true global citizens with international understanding, academic excellence, sensitive to the environment and to fellow beings and who are equipped to be leaders in their chosen field.</p>
+                <div class="text-center">
+                    <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/wGNWSCxqIhk?start=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <button type="submit" class="btn btn-danger">Visit Us</button>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <h2 class="pb-2 redline">Message from Principal</h2>
+                <div class="principal__info text-center p-3">
+                    <img src="Principal_2.jpg" alt="Principal Image">
+                    <span>Ms. Lalitha Naidu</span>
+                </div>
+                <p>Education plays a great role in the life of every person. It develops the character of an individual and transforms the personality for a bright future. Our philosophy at Meridian has always been to see the positivity in every child. That's probably one of the reasons why we follow inclusivity completely. We aim to bring out the best in every child. We want you to take some time to go through all these slides given as a part of our Annual report for you to understand the sound principles on which our education practices at school rest. The sincerity and dedication of our core group and teachers and all staff memebers help us to achieve our goals year on year.</p>
+
+                <p>Our students are our ambassadors, they are our gems, whose hard work, enthusiasm and relentless effort keeps us moving from strength to strenth. Dear parents, your coorperation, constructive feedback and support makes every little task achievable. A Meridianite always stays connected with the school. This we get to hear from our alumni, students who relocated to other parts of the country and world. We belive with conviction that the whole purpose of education is to turn mirrors into windows.</p>
+                <button type="submit" class="btn btn-danger">Visit Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!--   Why Meridian Section-->
+    
+<!--
+ <div class="container">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <h4>1</h4>
+            </div>
+            <div class="item">
+              <h4>2</h4>
+            </div>
+            <div class="item">
+              <h4>3</h4>
+            </div>
+            <div class="item">
+              <h4>4</h4>
+            </div>
+            <div class="item">
+              <h4>5</h4>
+            </div>
+            <div class="item">
+              <h4>6</h4>
+            </div>
+            <div class="item">
+              <h4>7</h4>
+            </div>
+            <div class="item">
+              <h4>8</h4>
+            </div>
+            <div class="item">
+              <h4>9</h4>
+            </div>
+            <div class="item">
+              <h4>10</h4>
+            </div>
+            <div class="item">
+              <h4>11</h4>
+            </div>
+            <div class="item">
+              <h4>12</h4>
+            </div>
+          </div>
+        
+      
+       
+        </div>
+      </div> 
+ </div> 
+    
+    
+-->
+
+    
+    
+    <section class="whymeridian text-center">
+        <h2 class="pb-2 text-yellow">Why Meridian Madhapur ?</h2>
+        <h4 class="text-white">Connecting the Mind and Heart</h4>
+        
+        
+        
+        
+        
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-sm-12 col-md-2">1</div>
+                <div class="col-sm-12 col-md-2">2</div>
+                <div class="col-sm-12 col-md-2">3</div>
+                <div class="col-sm-12 col-md-2">4</div>
+                <div class="col-sm-12 col-md-2">5</div>
+                <div class="col-sm-12 col-md-2">6</div>
+            </div>
+        </div>
+        
+        
+    </section>
+
+
+    <!--   Footer Section-->
+    <footer class="container-fluid">
+        <div class="row justify-content-around align-items-center">
+            <div class="col-sm-12 col-md-5 p-5">
+                <address>
+                    <h4 class="text-danger font-weight-bold">Meridian School, Madhapur</h4>
+                    <p class="font-weight-bold">#11/4 &amp; 11/5, Opp: Hitech City, Kukatpally Bypass Road, <br> Khanamet Village, Sherlingampally Mandal, <br> Hyderabad 500081, TELANGANA, INDIA <br> Phone: 9948043440, 8008204496, 9948811173, 040 &mdash; 65262631 <br> Email: info.madhapur@meridianschool.in</p>
+                </address>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.129148696122!2d78.38368807236147!3d17.4535316352729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91627fe20fdd%3A0xa931fdeb7fc541f!2sMeridian+School!5e0!3m2!1sen!2sin!4v1551869883828" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </footer>
+
+   
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <link rel="stylesheet" href="./css/owl.carousel.min.css">
+<!--    <link rel="stylesheet" href="./css/owl.theme.default.css">-->
+     <script src="./js/owl.carousel.min.js"></script>
+   
+      <script>
+            $(document).ready(function() {
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                margin: 10,
+                nav: true,
+                loop: true,
+                     autoplay: true,
+                responsive: {
+                  0: {
+                    items: 1
+                  },
+                  600: {
+                    items: 3
+                  },
+                  1000: {
+                    items: 1
+                  }
+                }
+              })
+            })
+          </script>
+</body>
+
+</html>
